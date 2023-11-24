@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function(){
     const day = document.getElementById("day");
     const month = document.getElementById("month");
     const year = document.getElementById("year");
@@ -7,14 +7,11 @@ window.onload = function () {
     const submitButton = document.getElementById("submit");
     const spans = document.getElementsByTagName("span");
 
-
     const date = new Date();
 
-
-    let currentDay = date.getDate()
-    let currentMonth = date.getMonth() +1
-    let currentYear = date.getYear()
-
+    let currentDay = date.getDate();
+    let currentMonth = date.getMonth() + 1;
+    let currentYear = date.getFullYear();
 
     const typeOfError = [
         "",
@@ -25,13 +22,11 @@ window.onload = function () {
         "Must be a valid date"
     ];
 
-
-  const errorState = (numberOfError, typeOfDate, typeOfError, color) => {
+    const errorState = (numberOfError, typeOfDate, typeOfError, color) => {
         error[numberOfError].innerHTML = typeOfError;
         labels[numberOfError].style.color = color;
         typeOfDate.style.borderColor = color;
     }
-
 
     const isLeapYear = (day, month, year) => {
         month = month - 1;
@@ -80,6 +75,7 @@ window.onload = function () {
         spans[1].innerHTML = newMonth;
         spans[2].innerHTML = newDay;
     }
+
     const isDayCorrect = () => {
         if(day.value == ""){
             errorState(0, day, typeOfError[1], "#ff5757");
@@ -98,7 +94,6 @@ window.onload = function () {
             return true;
         }
     }
-
 
     const isMonthCorrect = () => {
         if(month.value == ""){
@@ -154,4 +149,4 @@ window.onload = function () {
             substractAge();
         }
     })
-} 
+}
